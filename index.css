@@ -1,0 +1,21 @@
+body
+{
+    margin: 0px;
+}
+h2
+{
+    margin: 0px;
+}
+.block
+{
+    display:flex;
+    background-color:rgb(4, 116, 243);
+    height: 500px;
+    width:100%;
+    margin: 0px;
+}
+.block div
+{
+    flex:1 1 auto;
+    text-align: center;
+}
