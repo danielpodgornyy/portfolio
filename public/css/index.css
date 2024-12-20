@@ -29,6 +29,7 @@ main {
     border: .5px solid white;
     width: 75vw;
     max-width: 720px;
+    gap: 1rem;
 }
 
 h2, h3 {
@@ -42,6 +43,11 @@ h3 {
 a {
     display: block;
     margin-bottom: .25rem;
+}
+
+a > div{
+    display: inline;
+    cursor: pointer;
 }
 
 p {
