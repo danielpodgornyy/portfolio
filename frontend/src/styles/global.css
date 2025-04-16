@@ -1,0 +1,71 @@
+/*
+ * COLORS:
+ * backgrounds: #181F27
+ * main-text: #D4E6FF
+ * sub-text: #7A8B9F
+ * box-backgrounds: #151C25
+ * header-box: #1B2430
+ * stroke-1: #1F2833
+ * stroke-2: #3B495B
+ * button-body: #141A22
+*/
+
+* {
+    margin: 0;
+}
+
+body {
+    padding: 0 25px 0 25px;
+    background-color: #181F27;
+}
+
+header {
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    width: fit-content;
+    height: 50px;
+    padding: 0 10px 0 10px;;
+
+    background-color: #151C25;
+    border: 1px solid #212831;
+    border-top: 0;
+}
+
+.center-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+a:link {
+    text-decoration: None;
+    cursor: pointer;
+}
+
+.keybind-button, .link-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 75px;
+    height: 30px;
+
+    color: #7A8B9F;
+    font-size: .7rem;
+
+    background-color: #141A22;
+    border: 1px solid #212831;
+}
+
+.keybind-button{
+    width: 15px;
+    height: 20px;
+}
+
+.container {
+    background-color: #151C25;
+    border: 1px solid #3B495B;
+}
