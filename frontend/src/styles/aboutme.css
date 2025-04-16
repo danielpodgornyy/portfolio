@@ -1,0 +1,20 @@
+.aboutme-container {
+    margin: 100px 100px 0 100px;
+    min-width: 530px;
+    max-width: 800px;
+}
+
+.aboutme-desc {
+    margin: 20px 0 20px 0;
+    padding: 20px;
+}
+
+.socials-links {
+    margin-top: 10px;
+    width: fit-content;
+}
+
+.social-img {
+    width: 50px;
+    margin: 5px;
+}

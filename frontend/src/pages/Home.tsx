@@ -13,10 +13,10 @@ function Home() {
             <h1>Daniel Podgornyy</h1>
             <h3>Software Engineer</h3>
           </div>
-          <Shelf numTiles={3}/>
+          <Shelf numTiles={4}/>
         </div>
         <div className="split-container">
-          <Shelf numTiles={4}/>
+          <Shelf numTiles={5}/>
         </div>
       </div>
     </div>
