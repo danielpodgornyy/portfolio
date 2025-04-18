@@ -20,7 +20,7 @@ body {
 }
 
 header {
-    position: fixed;
+    position: absolute;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -32,6 +32,8 @@ header {
     background-color: #151C25;
     border: 1px solid #212831;
     border-top: 0;
+
+    z-index: 2;
 }
 
 p {
@@ -43,7 +45,6 @@ h1 {
     font-weight: normal;
     font-size: 2.5rem;
 }
-
 h3 {
     color: #7A8B9F;
     font-weight: normal;
@@ -60,7 +61,7 @@ a:link {
     cursor: pointer;
 }
 
-.keybind-button, .link-button {
+.keybind-button, .link-button, .link-button-active{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -74,7 +75,44 @@ a:link {
     border: 1px solid #212831;
 }
 
-.keybind-button{
+.keybind-button {
+    width: 15px;
+    height: 20px;
+}
+
+.link-button-active {
+    color: #C2CCD9;
+    background-color: #394556;
+    border: 1px solid #B9C5D4;
+}
+
+.keybinds {
+    display: flex;
+    position: absolute;
+    top: 0;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 0 10px 0 10px;;
+}
+
+.keybind-tile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 77px;
+    height: 32px;
+}
+
+.keybind-tile > p {
+    text-align: center;
+    border: 1px dashed #3B495B;
+    width: 20px;
+    font-size: .9rem;
+}
+
+.spacer {
     width: 15px;
     height: 20px;
 }
@@ -82,4 +120,32 @@ a:link {
 .container {
     background-color: #151C25;
     border: 1px solid #3B495B;
+}
+
+.slide-up {
+    animation: slide-up 0.1s ease-in-out forwards;
+}
+
+.slide-down {
+    animation: slide-down 0.1s ease-in-out forwards;
+}
+
+@keyframes slide-up {
+  from {
+    top: 0;
+  }
+
+  to {
+    top: 55px;
+  }
+}
+
+@keyframes slide-down {
+  from {
+    top: 55px;
+  }
+
+  to {
+    top: 0px;
+  }
 }
