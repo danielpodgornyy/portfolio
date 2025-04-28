@@ -2,7 +2,7 @@ import { Router } from 'express';
 import { getAllProjectInfo, getProjectInfo } from './projects.service.js';
 const router = Router();
 // Used to get only the necessary info to show all projects
-router.get('/projects', async (req, res, next) => {
+router.get('/projects', async (req, res) => {
     try {
         let slimProjectsArray = await getAllProjectInfo();
         res.status(200).json(slimProjectsArray);
@@ -13,11 +13,13 @@ router.get('/projects', async (req, res, next) => {
     }
 });
 // Used to get only the necessary info to show all projects
-router.get('/projects/:name', async (req, res, next) => {
+router.get('/projects/:name', async (req, res) => {
     try {
         let projectObject = await getProjectInfo(req.params.name);
+        console.log(projectObject);
         if (!projectObject) {
             res.status(404).json({ error: "Project does not exist" });
+            return;
         }
         res.status(200).json(projectObject);
     }

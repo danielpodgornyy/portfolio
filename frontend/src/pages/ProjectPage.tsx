@@ -1,13 +1,41 @@
-import  { useState } from 'react'
-import { useSearchParams, Link } from 'react-router';
+import  { useState, useEffect } from 'react'
+import { useSearchParams } from 'react-router';
+import { Link } from 'react-router-dom';
+import parse from 'html-react-parser';
 
+import api from '@/utils/api'
 import TagBar from '@/components/TagBar';
 
 import projects from '@/styles/Projects.module.css';
 import instance from '@/styles/Instance.module.css';
 
+interface Project {
+  name: string,
+  image_path: string,
+  image_alt: string,
+  desc: string,
+  background: string,
+  features: string
+  technologies: string
+  source: string,
+  live: string
+}
+
 function ProjectPage() {
   const [searchParams, setSearchParams] = useSearchParams();
+  const [projectInfo, setProjectInfo] = useState<Project | null>(null)
+
+  useEffect(() => {
+    async function pullProjectsArray() {
+      try {
+        let response = await api.get(`api/projects/${searchParams.get('name')}`);
+        setProjectInfo(response.data);
+      } catch (error) {
+        console.error("Error loading projects array");
+      }
+    }
+    pullProjectsArray()
+  }, [searchParams])
 
   return(
     <div className='center-content'>
@@ -16,23 +44,31 @@ function ProjectPage() {
           <img src='images/arrow.png' alt='Go back link'></img>
           Projects
         </Link>
-        <div className={instance.header}>
-          <h1>Multi-room chat application</h1>
-          <p>Netman is an application that is meant to show off many  networking concepts through a collection of mini-to-medium sized  projects. There is currently only one project implemented: the multiroom chat application</p>
-        </div>
-        <img src='/images/project.png' className={instance.visual}></img>
-        <div className={instance.instanceLinks}>
-          <button>Live</button>
-          <button>Source</button>
-        </div>
-        <div className={instance.content}>
-          <h2>Background</h2>
-          <p></p>
-          <h2>Features</h2>
-          <p></p>
-          <h2>Technologies/Languages used</h2>
-          <p></p>
-        </div>
+        { projectInfo 
+
+          ? <>
+              <div className={instance.header}>
+                <h1>{projectInfo.name}</h1>
+                <p>{projectInfo.desc}</p>
+              </div>
+              <img src='/images/project.png' className={instance.visual}></img>
+              <div className={instance.instanceLinks}>
+                <button>Live</button>
+                <button>Source</button>
+              </div>
+              <div className={instance.content}>
+                <h2>Background</h2>
+                {parse(projectInfo.background)}
+                <br/>
+                <h2>Features</h2>
+                {parse(projectInfo.features)}
+                <br/>
+                <h2>Technologies/Languages used</h2>
+                {parse(projectInfo.technologies)}
+              </div>
+            </>
+          : <p>ERROR: Could not load project info for {searchParams.get('name')}</p>
+        }
       </div>
     </div>
   )

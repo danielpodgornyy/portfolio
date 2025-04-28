@@ -10,9 +10,13 @@
  * button-body: #141A22
 */
 
-* {
-    margin: 0;
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
 }
+
 
 body {
     padding: 0 25px 0 25px;
@@ -36,7 +40,7 @@ header {
     z-index: 2;
 }
 
-p {
+p, ul, li {
     color: #7A8B9F;
 }
 

@@ -15,16 +15,18 @@ export async function getAllProjectInfo(): Promise<Array<SlimProject>>  {
   }
 }
 
-export async function getProjectInfo(name: string): Promise<Project | null>  {
+export async function getProjectInfo(input_name: string): Promise<Project | null>  {
   try {
     let projectsArray: Array<Project> = await readJSONArray<Project>('json/projects.json')
 
-    projectsArray.forEach((project) => {
-      if (project.name == name)
-        return project
-    })
+    // Iterate through projectsArray and set the outputProject if it was seen
+    for (const project of projectsArray) {
+      if (project.name === input_name) {
+        return project;
+      }
+    }
 
-    return null
+    return null;
   } catch(error: any) {
     throw new Error(error)
   }

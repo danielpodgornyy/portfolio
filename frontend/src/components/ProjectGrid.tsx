@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Link } from 'react-router';
+import { Link } from 'react-router-dom';
 
 import api from '@/utils/api';
 import TagBar from '@/components/TagBar';
@@ -19,7 +19,7 @@ interface Project {
 }
 
 function ProjectGrid() {
-  const [projectsArray, setProjectsArray] = useState<Array<Project>>([]);
+  const [projectsArray, setProjectsArray] = useState<Array<Project> | null>(null);
   useEffect(() => {
     async function pullProjectsArray() {
       try {
@@ -34,9 +34,12 @@ function ProjectGrid() {
 
   return (
     <div className={projects.projectGrid}>
-      {projectsArray.map((project) => (
-        <ProjectTile key={project.name} project={project} />
-      ))}
+      {projectsArray 
+        ? projectsArray.map((project) => (
+            <ProjectTile key={project.name} project={project} />
+          ))
+        : <p>ERROR: Could not load projects array</p>
+      }
     </div>
   )
 }
@@ -48,7 +51,7 @@ interface ProjectTileProps {
 function ProjectTile({ project }: ProjectTileProps) {
   return (
     <Link to={`/projects?name=${project.name}`}className={projects.projectTile}>
-      <img src={project.image_path} alt={project.image_alt}></img>
+      <img src={project.image_path} alt={project.image_alt} loading="lazy"></img>
       <div className={projects.projectInfo}>
         <h3>{project.name}</h3>
         <p>{project.desc}</p>
