@@ -1,10 +1,80 @@
 .projectsContainer {
-    margin: 100px 100px 0 100px;
+    margin: 100px 100px 50px 100px;
     min-width: 530px;
     max-width: 800px;
 }
 
 .projectsHeader {
-
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
+.hugBottom {
+    display: flex;
+    align-items: flex-end;
+}
+
+.utilHeader {
+    display: flex;
+    flex-direction: row;
+    height: fit-content;
+    gap: 5px;
+}
+
+.utilHeader > h3 {
+    font-size: 20px;
+}
+
+.utilHeader > button {
+    color: #7A8B9F;
+    background-color: #1B2430;
+    border: 1px solid #394556;
+    width: 21px;
+    height: 21px;
+    margin-top: 4px;
+}
+
+.projectGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.projectTile {
+    background-color: #151C25;
+    border: 1px solid #3B495B;
+}
+
+.projectTile > img {
+    width: 100%;
+}
+
+.projectInfo {
+    padding: 10px 20px 20px 20px;
+}
+
+.projectInfo > h3 {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #D4E6FF;
+    text-align: center;
+}
+
+.projectInfo > p {
+    font-size: 0.7rem;
+    color: #7A8B9F;
+    margin-top: 5px;
+}
+
+.tagBar {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.tagBar > i {
+    color: #D4E6FF;
+    font-size: 0.8rem;
+}
