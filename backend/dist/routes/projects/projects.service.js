@@ -11,13 +11,15 @@ export async function getAllProjectInfo() {
         throw new Error(error);
     }
 }
-export async function getProjectInfo(name) {
+export async function getProjectInfo(input_name) {
     try {
         let projectsArray = await readJSONArray('json/projects.json');
-        projectsArray.forEach((project) => {
-            if (project.name == name)
+        // Iterate through projectsArray and set the outputProject if it was seen
+        for (const project of projectsArray) {
+            if (project.name === input_name) {
                 return project;
-        });
+            }
+        }
         return null;
     }
     catch (error) {

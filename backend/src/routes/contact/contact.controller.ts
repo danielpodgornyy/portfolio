@@ -15,6 +15,7 @@ router.post('/contact', async (req, res, next) => {
     // Check email format
     if (!emailValidator(req.body.email)) {
       res.status(400).json({ error: 'Invalid email format'});
+      return;
     }
 
     // Send email of message to myself
