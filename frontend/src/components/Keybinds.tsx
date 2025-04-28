@@ -1,4 +1,4 @@
-type KeybindsProps = {
+interface KeybindsProps {
   keybindsActive: boolean;
 };
 

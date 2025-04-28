@@ -149,3 +149,68 @@ a:link {
     top: 0px;
   }
 }
+
+.tag-box {
+    color: #7A8B9F;
+    font-size: 0.8rem;
+    font-weight: bold;
+    background-color: #1B2430;
+    border: 1px solid #394556;
+    width: fit-content;
+    padding: 2px;
+}
+
+.section-header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.hug-bottom {
+    display: flex;
+    align-items: flex-end;
+}
+
+.util-header {
+    display: flex;
+    flex-direction: row;
+    height: fit-content;
+    gap: 5px;
+}
+
+.util-header > h3 {
+    font-size: 20px;
+}
+
+.util-header > button {
+    color: #7A8B9F;
+    background-color: #1B2430;
+    border: 1px solid #394556;
+    width: 21px;
+    height: 21px;
+    margin-top: 4px;
+}
+
+input, textarea {
+    width: 100%;
+    box-sizing: border-box;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    
+    border: 1px solid #394556;
+    
+    background-color: #DCDCDC;
+    color: #1C1E22;
+}
+
+.tag-bar {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.tag-bar > i {
+    color: #D4E6FF;
+    font-size: 0.8rem;
+}
+

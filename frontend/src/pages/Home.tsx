@@ -1,4 +1,4 @@
-import NotificationShelf from '@/components/NotificationShelf';
+import PreviewShelf from '@/components/PreviewShelf';
 
 import home from '@/styles/Home.module.css'
 
@@ -13,10 +13,10 @@ function Home() {
             <h1>Daniel Podgornyy</h1>
             <h3>Software Engineer</h3>
           </div>
-          <NotificationShelf numTiles={4}/>
+          <PreviewShelf numTiles={4}/>
         </div>
         <div className={home.splitContainer}>
-          <NotificationShelf numTiles={5}/>
+          <PreviewShelf numTiles={5}/>
         </div>
       </div>
     </div>

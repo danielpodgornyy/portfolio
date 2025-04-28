@@ -6,7 +6,6 @@ function KeyListener() {
 
   useEffect(() => {
     function handleKeyDown(e) {
-      console.log(e.key);
       switch(e.key) {
         case '1':
           navigate('/');
