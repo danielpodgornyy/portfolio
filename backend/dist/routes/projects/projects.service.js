@@ -3,8 +3,9 @@ export async function getAllProjectInfo() {
     try {
         let projectsArray = await readJSONArray('json/projects.json');
         return projectsArray.map((project) => {
-            const { name, image_path, desc } = project;
-            return { name, image_path, desc };
+            const { name, image_path, image_alt, description } = project;
+            console.log(project);
+            return { name, image_path, image_alt, description };
         });
     }
     catch (error) {

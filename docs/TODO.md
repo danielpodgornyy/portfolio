@@ -7,19 +7,21 @@
     - Hosting and domain buying
     - Axios
 
-# Stuff to do
-    - Contact me form (ALMOST DONE)
-    - Storing and pulling project files from json file
-    - Storing and pulling blog files from json file
-    - Set up path to an individual project file
-    - Set up DB
-    - Set up highlights and whats new on front page
-    - Rewrite about me
-    - Add search bar for blogs and projects
-    - Host site and buy domain
-    - Add current projects
-    - Add new article
-    - Build article and project pages
+# Stuff to do (URGENCY LEVEL INCLUDED)
+    - HIGH
+        - Set up DB
+        - Set up highlights and whats new on front page
+        - Contact me form (ALMOST DONE)
+            - Add a response to when you enter wrong stuff or if you successfully send a message
+    - MID
+        - Rewrite about me
+        - Add current projects and new article
+        - Host site and buy domain
+        - Add tests
+
+    - LOW
+        - Maybe mess around with coloring
+        - Add search bar for blogs and projects (maybe?)
 
 # Notes
     - DB tables
@@ -61,6 +63,6 @@
         - Use a time out for certain urls
 
 # Bugs
-    - When I enter numbers in the contact form, it moves me to another page
     - When I refresh it flashes white
     - When I refresh, the animation is a bit wack with how the numbers pop in
+    - Make test for if theres too many ltters in inputs

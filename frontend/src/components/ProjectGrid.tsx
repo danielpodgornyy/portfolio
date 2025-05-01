@@ -6,20 +6,15 @@ import TagBar from '@/components/TagBar';
 
 import projects from '@/styles/Projects.module.css';
 
-interface Project {
+interface SlimProject {
   name: string,
   image_path: string,
   image_alt: string,
-  desc: string,
-  background: string,
-  features: string
-  technologies: string
-  source: string,
-  live: string
+  description: string,
 }
 
 function ProjectGrid() {
-  const [projectsArray, setProjectsArray] = useState<Array<Project> | null>(null);
+  const [projectsArray, setProjectsArray] = useState<Array<SlimProject> | null>(null);
   useEffect(() => {
     async function pullProjectsArray() {
       try {
@@ -45,16 +40,16 @@ function ProjectGrid() {
 }
 
 interface ProjectTileProps {
-  project: Project;
+  project: SlimProject;
 }
 
 function ProjectTile({ project }: ProjectTileProps) {
   return (
-    <Link to={`/projects?name=${project.name}`}className={projects.projectTile}>
+    <Link to={`/projects?name=${encodeURIComponent(project.name)}`} className={projects.projectTile}>
       <img src={project.image_path} alt={project.image_alt} loading="lazy"></img>
       <div className={projects.projectInfo}>
         <h3>{project.name}</h3>
-        <p>{project.desc}</p>
+        <p> {project.description}</p>
       </div>
     </Link>
   )

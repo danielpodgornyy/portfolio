@@ -1,1 +1,62 @@
+# Node modules
 node_modules/
+
+# Logs
+logs
+*.log
+*.log.*
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# Build outputs
+/dist
+/build
+
+# Dependency directories
+jspm_packages/
+
+# TypeScript
+*.tsbuildinfo
+
+# VS Code
+.vscode/
+
+# MacOS
+.DS_Store
+
+# Windows
+Thumbs.db
+
+# Linux
+*~
+
+# npm package lock file
+package-lock.json
+
+# Yarn lock file
+yarn.lock
+
+# Next.js build outputs (if you're using Next.js)
+.next/
+
+# React build output
+/public
+
+# Coverage directory for tests
+coverage/
+
+# JetBrains IDEs
+.idea/
+
+# NPM cache
+.npm/
+
+# .env (if you have other custom .env files, you can specify more explicitly)
+.env*
+
+# Other OS-specific files
+ehthumbs.db
+

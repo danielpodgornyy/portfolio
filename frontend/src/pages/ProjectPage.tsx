@@ -13,12 +13,13 @@ interface Project {
   name: string,
   image_path: string,
   image_alt: string,
-  desc: string,
+  description: string,
   background: string,
   features: string
   technologies: string
   source: string,
-  live: string
+  live?: string
+  created: string
 }
 
 function ProjectPage() {
@@ -48,13 +49,19 @@ function ProjectPage() {
 
           ? <>
               <div className={instance.header}>
-                <h1>{projectInfo.name}</h1>
-                <p>{projectInfo.desc}</p>
+                <div className={instance.headerTop}>
+                  <h1>{projectInfo.name}</h1>
+                  <h3>{projectInfo.created}</h3>
+                </div>
+                <p>{projectInfo.description}</p>
               </div>
               <img src='/images/project.png' className={instance.visual}></img>
               <div className={instance.instanceLinks}>
-                <button>Live</button>
-                <button>Source</button>
+                { projectInfo.live
+                  ? <a href={projectInfo.live} >Live</a>
+                  : null
+                }
+                <a href={projectInfo.source} >Source</a>
               </div>
               <div className={instance.content}>
                 <h2>Background</h2>
