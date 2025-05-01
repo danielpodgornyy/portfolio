@@ -1,4 +1,5 @@
-import { Router } from 'express';
+import { Router, Request, Response } from 'express';
+import { param } from 'express-validator';
 
 import { Project, SlimProject } from './projects.model.js';
 import { getAllProjectInfo, getProjectInfo } from './projects.service.js'
@@ -17,8 +18,8 @@ router.get('/projects', async (req, res) => {
   }
 });
 
-// Used to get only the necessary info to show all projects
-router.get('/projects/:name', async (req, res) => {
+// Gets specfic data for a project
+router.get('/projects/:name', [param('name').trim().escape()],  async (req: Request, res: Response) => {
   try {
     let projectObject: Project | null = await getProjectInfo(req.params.name)
     console.log(projectObject)

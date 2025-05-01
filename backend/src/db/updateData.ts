@@ -29,11 +29,11 @@ async function updateData() {
     }).join(',');
 
     const post_query = `INSERT INTO blog (name, category, content, created)
-                   VALUES ${post_placeholder}
-                   ON CONFLICT (name)
-                   DO UPDATE SET category = EXCLUDED.category, 
-                                content = EXCLUDED.content, 
-                                created = EXCLUDED.created`;
+                        VALUES ${post_placeholder}
+                        ON CONFLICT (name)
+                        DO UPDATE SET category = EXCLUDED.category, 
+                          content = EXCLUDED.content, 
+                          created = EXCLUDED.created`;
 
     await db.query(post_query, flatPostObjectArray);
 
@@ -63,18 +63,17 @@ async function updateData() {
     }).join(',');
 
     const project_query = `INSERT INTO projects (name, image_path, image_alt, description, background, features, technologies, live, source, created)
-                   VALUES ${project_placeholder}
-                   ON CONFLICT (name)
-                   DO UPDATE SET 
-                     image_path = EXCLUDED.image_path,
-                     image_alt = EXCLUDED.image_alt,
-                     description = EXCLUDED.description,
-                     background = EXCLUDED.background,
-                     features = EXCLUDED.features,
-                     technologies = EXCLUDED.technologies,
-                     live = EXCLUDED.live,
-                     source = EXCLUDED.source,
-                     created = EXCLUDED.created`;
+                           VALUES ${project_placeholder}
+                           ON CONFLICT (name)
+                           DO UPDATE SET image_path = EXCLUDED.image_path,
+                             image_alt = EXCLUDED.image_alt,
+                             description = EXCLUDED.description,
+                             background = EXCLUDED.background,
+                             features = EXCLUDED.features,
+                             technologies = EXCLUDED.technologies,
+                             live = EXCLUDED.live,
+                             source = EXCLUDED.source,
+                             created = EXCLUDED.created`;
 
     await db.query(project_query, flatProjectObjectArray);
 

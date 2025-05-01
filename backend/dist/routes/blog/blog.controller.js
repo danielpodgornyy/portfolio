@@ -1,10 +1,12 @@
 import { Router } from 'express';
+import { param } from 'express-validator';
 import { getAllPostInfo, getPostInfo } from './blog.service.js';
 const router = Router();
 // Used to get only the necessary info to show all projects
 router.get('/blog', async (req, res) => {
     try {
         let slimPostsInfoArray = await getAllPostInfo();
+        console.log(slimPostsInfoArray);
         res.status(200).json(slimPostsInfoArray);
     }
     catch (error) {
@@ -12,8 +14,8 @@ router.get('/blog', async (req, res) => {
         res.status(500).json({ error: error.message });
     }
 });
-// Used to return an individual blog posts data
-router.get('/blog/:name', async (req, res) => {
+// Make sure to sanitize input
+router.get('/blog/:name', [param('name').trim().escape()], async (req, res) => {
     try {
         let postInfo = await getPostInfo(req.params.name);
         console.log(postInfo);

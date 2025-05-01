@@ -19,6 +19,7 @@
         - Host site and buy domain
         - Add tests
         - Escape input values and validate use express validation
+        - Add a loading screen
 
     - LOW
         - Maybe mess around with coloring

@@ -1,29 +1,24 @@
-import readJSONArray from '../../utils/readJSONArray.js';
+import db from '../../db/db_conn.js';
 export async function getAllProjectInfo() {
     try {
-        let projectsArray = await readJSONArray('json/projects.json');
-        console.log(projectsArray);
-        return projectsArray.map((project) => {
-            const { name, image_path, image_alt, description } = project;
-            return { name, image_path, image_alt, description };
-        });
+        const query = `SELECT name, image_path, image_alt, description FROM projects`;
+        let res = await db.query(query);
+        return res.rows;
     }
     catch (error) {
-        throw new Error(error);
+        throw new Error("Database error getting all project info: " + error);
     }
 }
 export async function getProjectInfo(input_name) {
     try {
-        let projectsArray = await readJSONArray('json/projects.json');
-        // Iterate through projectsArray and set the outputProject if it was seen
-        for (const project of projectsArray) {
-            if (project.name === input_name) {
-                return project;
-            }
-        }
-        return null;
+        const query = `SELECT * FROM projects 
+                   WHERE name = $1`;
+        let res = await db.query(query, [input_name]);
+        // Convert date object to a short data EX: MM/DD/YYYY
+        res.rows[0].created = res.rows[0].created.toLocaleDateString('en-US');
+        return res.rows[0];
     }
     catch (error) {
-        throw new Error(error);
+        throw new Error("Database error getting project info: " + error);
     }
 }

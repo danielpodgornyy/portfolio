@@ -1,17 +1,16 @@
 import { Router } from 'express';
-import emailValidator from '../../utils/emailValidator.js';
+import { body } from 'express-validator';
 import appendJSON from '../../utils/appendJSON.js';
 import sendEmail from './contact.service.js';
 const router = Router();
-router.post('/contact', async (req, res, next) => {
+router.post('/contact', [
+    body('name').trim().escape(),
+    body('email').trim().isEmail().withMessage("Invalid email format").normalizeEmail(),
+    body('message').trim().escape()
+], async (req, res) => {
     try {
         // Append the message to the json message file
         await appendJSON(req.body, 'messages.json');
-        // Check email format
-        if (!emailValidator(req.body.email)) {
-            res.status(400).json({ error: 'Invalid email format' });
-            return;
-        }
         // Send email of message to myself
         let emailResponse = await sendEmail(req.body);
         res.status(200).json({ message: 'Message sent successfully' });

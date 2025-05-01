@@ -20,11 +20,11 @@ async function updateData() {
             return `($${offset + 1}, $${offset + 2}, $${offset + 3}, $${offset + 4})`;
         }).join(',');
         const post_query = `INSERT INTO blog (name, category, content, created)
-                   VALUES ${post_placeholder}
-                   ON CONFLICT (name)
-                   DO UPDATE SET category = EXCLUDED.category, 
-                                content = EXCLUDED.content, 
-                                created = EXCLUDED.created`;
+                        VALUES ${post_placeholder}
+                        ON CONFLICT (name)
+                        DO UPDATE SET category = EXCLUDED.category, 
+                          content = EXCLUDED.content, 
+                          created = EXCLUDED.created`;
         await db.query(post_query, flatPostObjectArray);
         /* UPDATE PROJECT DATA */
         const projectObjectArray = await readJSONArray('json/projects.json');
@@ -49,18 +49,17 @@ async function updateData() {
             return `($${offset + 1}, $${offset + 2}, $${offset + 3}, $${offset + 4}, $${offset + 5}, $${offset + 6}, $${offset + 7}, $${offset + 8}, $${offset + 9}, $${offset + 10})`;
         }).join(',');
         const project_query = `INSERT INTO projects (name, image_path, image_alt, description, background, features, technologies, live, source, created)
-                   VALUES ${project_placeholder}
-                   ON CONFLICT (name)
-                   DO UPDATE SET 
-                     image_path = EXCLUDED.image_path,
-                     image_alt = EXCLUDED.image_alt,
-                     description = EXCLUDED.description,
-                     background = EXCLUDED.background,
-                     features = EXCLUDED.features,
-                     technologies = EXCLUDED.technologies,
-                     live = EXCLUDED.live,
-                     source = EXCLUDED.source,
-                     created = EXCLUDED.created`;
+                           VALUES ${project_placeholder}
+                           ON CONFLICT (name)
+                           DO UPDATE SET image_path = EXCLUDED.image_path,
+                             image_alt = EXCLUDED.image_alt,
+                             description = EXCLUDED.description,
+                             background = EXCLUDED.background,
+                             features = EXCLUDED.features,
+                             technologies = EXCLUDED.technologies,
+                             live = EXCLUDED.live,
+                             source = EXCLUDED.source,
+                             created = EXCLUDED.created`;
         await db.query(project_query, flatProjectObjectArray);
         console.log('Database updated');
     }
