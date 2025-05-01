@@ -2,6 +2,7 @@ export interface Project {
   name: string,
   image_path: string,
   image_alt: string,
+  category: string,
   description: string,
   background: string,
   features: string
@@ -21,6 +22,7 @@ export interface SlimProject {
 export interface Post {
   name: string,
   category: string,
+  description: string,
   content: string,
   created: string
 }
@@ -36,3 +38,11 @@ export interface InputFields {
   email: string;
   message: string;
 }
+
+export interface Preview {
+  name: string,
+  category: string,
+  description: string,
+  created: string
+}
+

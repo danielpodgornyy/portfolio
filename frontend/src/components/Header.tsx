@@ -19,7 +19,7 @@ const centerStyle: { [key: string]: string } = {
   width: "100%",
 }
 
-export default function Header() {
+function Header() {
   const location = useLocation();
   const [keybindsActive, setKeybindsActive] = useState(false);
 
@@ -52,3 +52,5 @@ export default function Header() {
     </div>
   )
 }
+
+export default Header;

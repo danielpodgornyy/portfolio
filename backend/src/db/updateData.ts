@@ -16,6 +16,7 @@ async function updateData() {
     const flatPostObjectArray = postObjectArray.flatMap(post => [
       post.name,
       post.category,
+      post.description,
       post.content,
       post.created
     ]);
@@ -24,14 +25,15 @@ async function updateData() {
     // EX: (name, cat, con, cre),
     //     (name2, cat2, con2, cre2)
     const post_placeholder = postObjectArray.map((_, i) => {
-      const offset = i * 4;
-      return `($${offset + 1}, $${offset + 2}, $${offset + 3}, $${offset + 4})`;
+      const offset = i * 5;
+      return `($${offset + 1}, $${offset + 2}, $${offset + 3}, $${offset + 4}, $${offset + 5})`;
     }).join(',');
 
-    const post_query = `INSERT INTO blog (name, category, content, created)
+    const post_query = `INSERT INTO blog (name, category, description, content, created)
                         VALUES ${post_placeholder}
                         ON CONFLICT (name)
                         DO UPDATE SET category = EXCLUDED.category, 
+                          description = EXCLUDED.description, 
                           content = EXCLUDED.content, 
                           created = EXCLUDED.created`;
 
@@ -45,6 +47,7 @@ async function updateData() {
       project.name,
       project.image_path,
       project.image_alt,
+      project.category,
       project.description,
       project.background,
       project.features,
@@ -58,15 +61,16 @@ async function updateData() {
     // EX: (name, img, alt, desc, bg, feat, tech, live, source, created),
     //     (name2, img2, alt2, desc2, bg2, feat2, tech2, live2, source2, created2)
     const project_placeholder = projectObjectArray.map((_, i) => {
-      const offset = i * 10; // Since project has 10 fields
-      return `($${offset + 1}, $${offset + 2}, $${offset + 3}, $${offset + 4}, $${offset + 5}, $${offset + 6}, $${offset + 7}, $${offset + 8}, $${offset + 9}, $${offset + 10})`;
+      const offset = i * 11; // Since project has 10 fields
+      return `($${offset + 1}, $${offset + 2}, $${offset + 3}, $${offset + 4}, $${offset + 5}, $${offset + 6}, $${offset + 7}, $${offset + 8}, $${offset + 9}, $${offset + 10}, $${offset + 11})`;
     }).join(',');
 
-    const project_query = `INSERT INTO projects (name, image_path, image_alt, description, background, features, technologies, live, source, created)
+    const project_query = `INSERT INTO projects (name, image_path, image_alt, category, description, background, features, technologies, live, source, created)
                            VALUES ${project_placeholder}
                            ON CONFLICT (name)
                            DO UPDATE SET image_path = EXCLUDED.image_path,
                              image_alt = EXCLUDED.image_alt,
+                             category = EXCLUDED.category,
                              description = EXCLUDED.description,
                              background = EXCLUDED.background,
                              features = EXCLUDED.features,

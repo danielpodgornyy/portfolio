@@ -34,6 +34,7 @@
     - Figure out whether to use JSON or DB
 
     - Use icons to identify projects vs blogs
+    - Later, decide if I want to only put the names of projects in my highlights
 
 # Endpoints
     - /contact

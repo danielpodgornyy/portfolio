@@ -66,6 +66,7 @@ body {
     justify-content: center;
     align-items: center;
     width: 60px;
+    height: 60px;
     margin: 15px;
     background-color: #151C25;
     border: 1px solid #1F2833;
@@ -77,11 +78,10 @@ body {
 }
 
 .tileInfo {
-    padding: 8px 8px 8px 0;
+    padding: 12px 12px 12px 0;
 }
 
 .tileTitle {
-    text-align: center;
     font-size: 1.1rem;
     color: #CDE2FF;
     margin-bottom: 2px;

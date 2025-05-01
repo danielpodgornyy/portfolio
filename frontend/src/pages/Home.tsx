@@ -1,11 +1,23 @@
+import { useState, useEffect } from 'react';
+
+import api from '@/utils/api'
 import PreviewShelf from '@/components/PreviewShelf';
 
+import { Preview } from '@/types';
 import home from '@/styles/Home.module.css'
 
-
 function Home() {
-  return (
+  const [previewInfo, setPreviewInfo] = useState<Array<Array<Preview>> | null>(null);
 
+  useEffect(() => {
+  async function getPreview() {
+    const res = await api.get('api/preview');
+    setPreviewInfo(res.data);
+  }
+  getPreview()
+
+  }, [])
+  return (
     <div className="center-content">
       <div className={home.homeContainer}>
         <div className={home.splitContainer}>
@@ -13,10 +25,16 @@ function Home() {
             <h1>Daniel Podgornyy</h1>
             <h3>Software Engineer</h3>
           </div>
-          <PreviewShelf numTiles={4}/>
+          <PreviewShelf numTiles={3} title="What's new?" inputData={
+            previewInfo
+            ? previewInfo[0]
+            : null}/>
         </div>
         <div className={home.splitContainer}>
-          <PreviewShelf numTiles={5}/>
+          <PreviewShelf numTiles={4} title="Highlights" inputData={
+            previewInfo
+            ? previewInfo[1]
+            : null}/>
         </div>
       </div>
     </div>

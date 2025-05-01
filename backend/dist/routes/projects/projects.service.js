@@ -14,6 +14,7 @@ export async function getProjectInfo(input_name) {
         const query = `SELECT * FROM projects 
                    WHERE name = $1`;
         let res = await db.query(query, [input_name]);
+        console.log(res.rows[0]);
         // Convert date object to a short data EX: MM/DD/YYYY
         res.rows[0].created = res.rows[0].created.toLocaleDateString('en-US');
         return res.rows[0];

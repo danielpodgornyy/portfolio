@@ -21,6 +21,8 @@ export async function getProjectInfo(input_name: string): Promise<Project | null
 
     let res = await db.query(query, [input_name]);
 
+    console.log(res.rows[0])
+
     // Convert date object to a short data EX: MM/DD/YYYY
     res.rows[0].created = res.rows[0].created.toLocaleDateString('en-US');
 

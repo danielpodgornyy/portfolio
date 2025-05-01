@@ -1,6 +1,7 @@
 export interface Post {
   name: string,
   category: string,
+  description: string,
   content: string,
   created: string
 }

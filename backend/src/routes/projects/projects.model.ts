@@ -2,6 +2,7 @@ export interface Project {
   name: string,
   image_path: string,
   image_alt: string,
+  category: string,
   description: string,
   background: string,
   features: string
