@@ -1,5 +1,4 @@
 
-/*
 
 import db from './db_conn.js';
 import readJSONArray from '../utils/readJSONArray.js';
@@ -9,6 +8,9 @@ import { Project } from '../routes/projects/projects.model.js';
 // Updates the data in the DB to match the json files in the json directory (Only make changes if there's a conflict)
 async function updateData() {
   try {
+
+    /* UPDATING BLOG DATA */
+
     const postObjectArray: Array<Post> = await readJSONArray<Post>('json/blog.json');
     // Flattens each object within the array to make it compatible with the db query
     const flatPostObjectArray = postObjectArray.flatMap(post => [
@@ -34,6 +36,8 @@ async function updateData() {
                                 created = EXCLUDED.created`;
 
     await db.query(post_query, flatPostObjectArray);
+
+    /* UPDATE PROJECT DATA */
 
     const projectObjectArray: Array<Project> = await readJSONArray<Project>('json/projects.json');
     // Flattens each object within the array to make it compatible with the db query
@@ -84,4 +88,3 @@ async function updateData() {
 
 updateData();
 
-*/

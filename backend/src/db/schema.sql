@@ -2,15 +2,14 @@ DROP TABLE IF EXISTS blog;
 DROP TABLE IF EXISTS projects;
 
 CREATE TABLE blog (
-    id SERIAL PRIMARY KEY,
     name TEXT NOT NULL,
     category TEXT,
     content TEXT NOT NULL,
-    created TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    created TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    CONSTRAINT blog_pk PRIMARY KEY (name)
 );
 
 CREATE TABLE projects (
-    id SERIAL PRIMARY KEY,
     name TEXT NOT NULL,
     image_path TEXT,
     image_alt TEXT,
@@ -18,7 +17,9 @@ CREATE TABLE projects (
     background TEXT,
     features TEXT,
     technologies TEXT,
+    live TEXT,
     source TEXT,
-    created TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    created TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    CONSTRAINT projects_pk PRIMARY KEY (name)
 );
 
