@@ -2,9 +2,9 @@ import readJSONArray from '../../utils/readJSONArray.js';
 export async function getAllProjectInfo() {
     try {
         let projectsArray = await readJSONArray('json/projects.json');
+        console.log(projectsArray);
         return projectsArray.map((project) => {
             const { name, image_path, image_alt, description } = project;
-            console.log(project);
             return { name, image_path, image_alt, description };
         });
     }

@@ -4,6 +4,7 @@ import { Project, SlimProject } from './projects.model.js';
 export async function getAllProjectInfo(): Promise<Array<SlimProject>>  {
   try {
     let projectsArray: Array<Project> = await readJSONArray<Project>('json/projects.json')
+    console.log(projectsArray)
 
     return projectsArray.map((project) => {
       const { name, image_path, image_alt, description } = project;

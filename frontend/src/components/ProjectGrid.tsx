@@ -2,16 +2,9 @@ import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
 import api from '@/utils/api';
-import TagBar from '@/components/TagBar';
 
+import { SlimProject } from '@/types.js'
 import projects from '@/styles/Projects.module.css';
-
-interface SlimProject {
-  name: string,
-  image_path: string,
-  image_alt: string,
-  description: string,
-}
 
 function ProjectGrid() {
   const [projectsArray, setProjectsArray] = useState<Array<SlimProject> | null>(null);

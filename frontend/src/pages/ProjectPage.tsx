@@ -6,21 +6,9 @@ import parse from 'html-react-parser';
 import api from '@/utils/api'
 import TagBar from '@/components/TagBar';
 
+import { Project } from '@/types.js'
 import projects from '@/styles/Projects.module.css';
 import instance from '@/styles/Instance.module.css';
-
-interface Project {
-  name: string,
-  image_path: string,
-  image_alt: string,
-  description: string,
-  background: string,
-  features: string
-  technologies: string
-  source: string,
-  live?: string
-  created: string
-}
 
 function ProjectPage() {
   const [searchParams, setSearchParams] = useSearchParams();

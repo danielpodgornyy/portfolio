@@ -1,5 +1,5 @@
 import  { useState } from 'react'
-import { useSearchParams } from 'react-router';
+import { useSearchParams } from 'react-router-dom';
 
 import ProjectPage from '@/pages/ProjectPage'
 import SectionHeader from '@/components/SectionHeader';

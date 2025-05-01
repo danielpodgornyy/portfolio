@@ -1,13 +1,8 @@
 import { useState, ChangeEvent, FormEvent } from 'react';
 import api from '@/utils/api'
 
+import { InputFields } from '@/types.js'
 import contactme from '@/styles/ContactMe.module.css';
-
-interface InputFields {
-  fullname: string;
-  email: string;
-  message: string;
-}
 
 function ContactForm() {
   const [inputs, setInputs] = useState<InputFields>({

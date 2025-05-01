@@ -6,6 +6,16 @@ function KeyListener() {
 
   useEffect(() => {
     function handleKeyDown(e) {
+      const target = e.target;
+      const isTyping =
+        target.tagName === 'INPUT' ||
+        target.tagName === 'TEXTAREA' ||
+        target.isContentEditable;
+
+      if (isTyping) {
+       return; 
+      }
+
       switch(e.key) {
         case '1':
           navigate('/');

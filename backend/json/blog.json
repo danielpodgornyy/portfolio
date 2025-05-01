@@ -1,5 +1,4 @@
-{
-  "blog_posts": [
+[    
     {
       "name": "The Difficulties of being a Big Baller",
       "category": "Computer Science",
@@ -12,6 +11,5 @@
       "content": "<p>dsadsdsa</p>",
       "created": "01/03/2025"
     }
-  ]
-}
+]
 

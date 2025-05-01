@@ -1,18 +1,25 @@
+import { useSearchParams } from 'react-router-dom';
+
+import BlogPage from '@/pages/BlogPage.js'
 import SectionHeader from '@/components/SectionHeader';
 import BlogTiles from '@/components/BlogTiles';
 
 import blog from '@/styles/Blog.module.css';
 
-function Projects() {
+function Blog() {
+  const [searchParams, setSearchParams] = useSearchParams();
 
   return (
     <div className='center-content'>
-      <div className={blog.blogContainer}>
-        <SectionHeader sectionName='Blog'/>
-        <BlogTiles />
-      </div>
+      { searchParams.get('name')
+        ? <BlogPage/>
+        : <div className={blog.blogContainer}>
+            <SectionHeader sectionName='Blog'/>
+            <BlogTiles />
+          </div>
+      }
     </div>
   )
 }
 
-export default Projects;
+export default Blog;

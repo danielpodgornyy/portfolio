@@ -58,6 +58,7 @@ h3 {
 .center-content {
     display: flex;
     justify-content: center;
+    width: 100%;
 }
 
 a:link {

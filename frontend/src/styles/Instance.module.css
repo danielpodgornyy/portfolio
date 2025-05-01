@@ -2,6 +2,7 @@
     margin: 100px 100px 50px 100px;
     min-width: 530px;
     max-width: 800px;
+    width: 100%;
 }
 
 .backtrackLink {
@@ -23,7 +24,7 @@
 }
 
 .headerTop > h1 {
-    font-size: 2.5rem;
+    font-size: 2.1rem;
 }
 
 .headerTop > h3 {
@@ -80,7 +81,7 @@
     border: 1px solid #3B495B;
     width: 100%;
     padding: 20px;
-    margin-top: 20px;
+    margin-top: 30px;
     color: #D4E6FF;
 }
 
