@@ -46,15 +46,25 @@ interface NotificationTileProps {
 }
 
 function NotificationTile({ inputData }: NotificationTileProps) {
-  const redirectLink = inputData.category == 'project'
+  const redirectLink = inputData.category == 'Project'
                        ? `/projects?name=${encodeURIComponent(inputData.name)}`
                        : `/blog?name=${encodeURIComponent(inputData.name)}`
+
+  // Add more once decided
+  let logo_path;
+  switch(inputData.category) {
+    case 'Project':
+      logo_path = '/images/project.png'
+      break;
+    default:
+      logo_path = '/images/article.png'
+  }
   
   return (
     <Link to={redirectLink} className={home.tile}>
       <div className={home.logo}>
         <div className={home.imgContainer}>
-          <img src='/images/article.png' className={home.tileImg} />
+          <img src={logo_path} className={home.tileImg} />
         </div>
       </div>
       <div className={home.tileInfo}>
@@ -70,17 +80,8 @@ function NotificationTile({ inputData }: NotificationTileProps) {
 function EmptyNotificationTile() {
 
   return (
-    <div className={home.tile}>
-      <div className={home.logo}>
-        <div className={home.imgContainer}>
-          <div className={home.tileImg}>
-          </div>
-        </div>
-      </div>
-      <div className={home.tileInfo}>
-        <div className={home.tileTitle}></div>
-        <div className={home.tileDesc}>
-        </div>
+    <div className={home.emptyTile}>
+      <div className={home.emptyImg}>
       </div>
     </div>
   )

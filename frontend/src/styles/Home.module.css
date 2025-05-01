@@ -91,3 +91,10 @@ body {
     font-size: 0.7rem;
     color: #7A8B9F;
 }
+
+.emptyTile {
+    background-color: #151C25;
+    border: 1px dashed #1d252f;
+    height: 92px;
+}
+
