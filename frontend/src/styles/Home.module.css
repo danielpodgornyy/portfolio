@@ -2,15 +2,21 @@ body {
     height: 100vh;
 }
 
+
 .homeContainer {
     display: flex;
     gap: 70px;
     margin-top: 100px;
     margin-bottom: 50px;
+
+    min-width: 530px;
+    max-width: 800px;
+    width: 800px;
+
 }
 
 .splitContainer {
-    flex: 1 1 auto;
+    flex: 1 1 0;
     max-width: 400px;
 }
 
@@ -52,8 +58,10 @@ body {
     display: flex;
     flex-direction: row;
     width: 100%;
+    min-height: 92px;
     background-color: #141A22;
     border: 1px solid #212831;
+    max-width: 358px;
 }
 
 .logo {

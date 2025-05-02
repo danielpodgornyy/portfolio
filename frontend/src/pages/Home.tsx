@@ -11,8 +11,12 @@ function Home() {
 
   useEffect(() => {
   async function getPreview() {
-    const res = await api.get('api/preview');
-    setPreviewInfo(res.data);
+    try{
+      const res = await api.get('api/preview');
+      setPreviewInfo(res.data);
+    } catch (error) {
+      console.error('Error pulling preview data' + error);
+    }
   }
   getPreview()
 

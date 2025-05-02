@@ -14,17 +14,21 @@ function PreviewShelf({ numTiles, title, inputData }: NotificationShelfProps) {
   const [tiles, setTiles] = useState<React.ReactElement[]>([]);
 
   useEffect(() => {
-    if (!inputData) return;
-
     const generatedTiles = [];
 
-    inputData.forEach((data) => {
-      generatedTiles.push(<NotificationTile key={data.name} inputData={data}/>);
-    });
-
-    for (let i = 0; i < numTiles - inputData.length; i++) {
-      generatedTiles.push(<EmptyNotificationTile key={i}/>)
+    if (inputData && inputData.length > 0) {
+      inputData.forEach((data) => {
+        generatedTiles.push(<NotificationTile key={data.name} inputData={data} />);
+      });
+      for (let i = 0; i < numTiles - inputData.length; i++) {
+        generatedTiles.push(<EmptyNotificationTile key={`empty-${i}`} />);
+      }
+    } else {
+      for (let i = 0; i < numTiles; i++) {
+        generatedTiles.push(<EmptyNotificationTile key={`empty-${i}`} />);
+      }
     }
+
 
     setTiles(generatedTiles);
   }, [inputData, numTiles]);
