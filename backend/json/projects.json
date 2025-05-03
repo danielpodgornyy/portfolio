@@ -2,7 +2,7 @@
   {
     "name": "Portfolio",
     "image_path": "images/project.png",
-    "image_alt": "Gif on how the app works",
+    "image_alt": "GIF showing the usage of the portfolio",
     "category": "Project",
     "description": "A fully featured personal portfolio website that offers a preview page of new additions and highlights, easy and dynamic adding of new blog posts and projects, a contact page and some additional features",
     "background": "<p>For a while, I've been meaning to create a personal portfolio, but due to school and work taking up quite a large chunk of my time, it kept getting pushed to the back burner. But as the semester's coming to an end, I finally felt it was about time to finish this up and actually put it to good use. The site isn't just a place to showcase my work—it's also meant to demonstrate my thought process and to serve as a public record of my progress, showing how far I've come and how far I can go.</p><br><p>While I originally created it for my personal use, I've open-sourced it and designed it in a way that lets anyone (with some minor tweaks) to take the base I've built and use it for themselves—no holds barred. If you're interested, check out the README on GitHub for instructions.</p><br><p>If you find any bugs or have suggestions for updates or changes, feel free to reach out via the contact form above!</p>",
@@ -13,11 +13,11 @@
     "created": "5/2/2025"
   },
   {
-    "name": "Netman2",
+    "name": "Project Atlas",
     "image_path": "images/project.png",
-    "image_alt": "example",
+    "image_alt": "GIF showing the globe and how its used",
     "category": "Project",
-    "description": "Netman is an application that is meant to show off many networking concepts through a collection of mini-to-medium sized projects. There is currently only one project implemented: the multiroom chat application.",
+    "description": "A website that displays an interactable 3D render of a globe with filters that display a plethora of live data",
     "background": "<p>During the winter break of my 3rd year at UNT, I really wanted to apply one of the concepts that I learned about.</p>",
     "features": "<ul><li>Real-time messaging</li><li>User authentication and login</li><li>Typing indicators</li><li>Read receipts</li><li>Group chats</li><li>Direct (one-on-one) messaging</li><li>Media sharing (images, videos, files)</li><li>Push notifications</li><li>Online/offline status</li><li>Message search functionality</li><li>Message reactions (like emojis)</li><li>Chat history and persistence</li><li>End-to-end encryption</li><li>User profiles and avatars</li><li>Admin controls for groups</li><li>Message editing and deletion</li><li>Customizable chat themes or backgrounds</li></ul>",
     "technologies": "<ul><li>C</li><li>Linux (sockets, epoll, multithreading)</li><li>Makefile</li><li>Shell scripting</li><li>SQLite</li><li>TCP/IP Networking</li><li>JSON (for message formatting)</li><li>Git</li><li>VSCode</li></ul>",

@@ -30,8 +30,24 @@ export async function getNewestContent(): Promise<Array<Preview>> {
 export async function getHighlights(): Promise<Array<Preview>> {
   try {
     const highlights: Array<Preview> = await readJSONArray<Preview>('json/highlights.json') 
+    console.log(highlights)
 
-    return highlights;
+    const query = `SELECT name, category, description, created
+                   FROM (
+                     SELECT name, category, description, created FROM projects 
+                     UNION ALL
+                     SELECT name, category, description, created FROM blog 
+                   ) AS preview
+                   WHERE name = ANY($1);`
+
+    const res = await db.query(query, [highlights]);
+
+    // Convert date object to a short data for each SlimPostInfo object EX: MM/DD/YYYY
+    res.rows.forEach((row) => {
+      row.created = row.created.toLocaleDateString('en-US');
+    });
+
+    return res.rows;
   } catch (error) {
     throw new Error("Could not read highlights JSON file: " + error)
   }

@@ -1,15 +1,1 @@
-[
-    {
-        "name": "Netman3",
-        "category": "Project",
-        "description": "Netman is an application that is meant to show off many networking concepts through a collection of mini-to-medium sized projects. There is currently only one project implemented: the multiroom chat application.",
-        "created": "1/3/2025"
-    },
-    {
-      "name": "The Difficulties of being a Big Baller",
-      "category": "Computer Science",
-      "description": " AN article that delves deep into the inner complexities of ya gombo go bingo",
-      "content": "<article><h3>How Urban Gardens Are Transforming City Living</h3><p>In recent years, urban gardening has taken root in cities around the world. What began as a grassroots movement is now reshaping how communities think about food, space, and sustainability.</p><ul><li>Rooftop gardens reduce urban heat and improve air quality.</li><li>Community gardens promote social interaction and local food production.</li><li>Vertical farming allows for agriculture in compact spaces.</li></ul><blockquote><p>“I never imagined growing my own vegetables in the heart of the city,” said Maya Thompson, a Brooklyn resident. “It’s changed how I see my neighborhood.”</p></blockquote><p>From school programs to city-funded initiatives, the urban gardening trend shows no sign of slowing down. Experts believe it could be key to more resilient and self-sufficient cities in the face of climate change and rising food costs.</p></article>",
-      "created": "01/03/2025"
-    }
-]
+["Portfolio", "Netman2"]
