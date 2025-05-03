@@ -6,7 +6,7 @@ export async function getNewestContent() {
         const query = `SELECT name, category, description, created FROM projects
                    UNION ALL
                    SELECT name, category, description, created FROM blog
-                   ORDER BY created ASC
+                   ORDER BY created DESC 
                    LIMIT 3`;
         const res = await db.query(query);
         // Convert date object to a short data for each SlimPostInfo object EX: MM/DD/YYYY

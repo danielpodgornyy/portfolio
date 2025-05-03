@@ -22,6 +22,7 @@ html, body {
 }
 
 body {
+    font-family: 'cantarell', sans-serif;
     padding: 0 25px 0 25px;
     background-color: #181F27;
 }
@@ -234,7 +235,7 @@ input, textarea {
 }
 
 footer {
-    color: #D4E6FF;
+    color: #7A8B9F;
     height: 100%;
     padding-bottom: 10px;
     font-size: 0.8rem;

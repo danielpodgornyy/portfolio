@@ -9,8 +9,9 @@ export async function getNewestContent(): Promise<Array<Preview>> {
     const query = `SELECT name, category, description, created FROM projects
                    UNION ALL
                    SELECT name, category, description, created FROM blog
-                   ORDER BY created ASC
+                   ORDER BY created DESC 
                    LIMIT 3`
+
 
     const res = await db.query(query);
 

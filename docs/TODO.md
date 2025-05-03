@@ -5,21 +5,17 @@
     - Express.js
     - React Router
     - Hosting and domain buying
-    - Axios
 
 # Stuff to do (URGENCY LEVEL INCLUDED)
     - HIGH
-        - Set up DB
-        - Set up highlights and whats new on front page
-        - Contact me form (ALMOST DONE)
-            - Add a response to when you enter wrong stuff or if you successfully send a message
-    - MID
+        - Do reading on security best practices
         - Rewrite about me
         - Add current projects and new article
+    - MID
         - Host site and buy domain
         - Add tests
-        - Escape input values and validate use express validation
         - Add a loading screen
+        - Add logging
 
     - LOW
         - Maybe mess around with coloring
@@ -35,6 +31,7 @@
 
     - Use icons to identify projects vs blogs
     - Later, decide if I want to only put the names of projects in my highlights
+    - Clean up CSS
 
 # Endpoints
     - /contact
@@ -68,4 +65,4 @@
 # Bugs
     - When I refresh it flashes white
     - When I refresh, the animation is a bit wack with how the numbers pop in
-    - Make test for if theres too many ltters in inputs
+    - Make test for if theres too many letters in inputs

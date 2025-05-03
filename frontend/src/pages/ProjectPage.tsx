@@ -58,7 +58,7 @@ function ProjectPage() {
                 <h2>Features</h2>
                 {parse(projectInfo.features)}
                 <br/>
-                <h2>Technologies/Languages used</h2>
+                <h2>Main resources used</h2>
                 {parse(projectInfo.technologies)}
               </div>
             </>

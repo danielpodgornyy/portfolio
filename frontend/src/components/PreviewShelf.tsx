@@ -17,6 +17,8 @@ function PreviewShelf({ numTiles, title, inputData }: NotificationShelfProps) {
     const generatedTiles = [];
 
     if (inputData && inputData.length > 0) {
+      // Makes sure to sort the input descending (newest data first)
+      inputData.sort((a, b) => new Date(b.created).getTime() - new Date(a.created).getTime());
       inputData.forEach((data) => {
         generatedTiles.push(<NotificationTile key={data.name} inputData={data} />);
       });
