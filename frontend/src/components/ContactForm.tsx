@@ -1,10 +1,8 @@
 import { useState, ChangeEvent, FormEvent } from 'react';
 import api from '@/utils/api'
 
-import { InputFields } from '@/types.js'
+import { InputFields, Status } from '@/types.js'
 import contactme from '@/styles/ContactMe.module.css';
-
-type Status = 'SUCCESS' | 'FAILURE' | 'IDLE';
 
 function ContactForm() {
   const [inputs, setInputs] = useState<InputFields>({

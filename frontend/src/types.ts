@@ -46,3 +46,4 @@ export interface Preview {
   created: string
 }
 
+export type Status = 'SUCCESS' | 'FAILURE' | 'IDLE';
