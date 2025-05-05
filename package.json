@@ -23,8 +23,8 @@
     "express": "^5.1.0"
   },
   "devDependencies": {
-    "concurrently": "^9.1.2",
     "@types/express": "^5.0.1",
+    "concurrently": "^9.1.2",
     "ts-node": "^10.9.2",
     "tsconfig-paths": "^4.2.0",
     "typescript": "^5.8.3"
