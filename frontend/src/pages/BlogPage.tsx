@@ -30,30 +30,30 @@ function BlogPage() {
   return (
     <div className='center-content'>
       <div className={instance.instanceContainer}>
-      {loadingStatus === 'SUCCESS' ? (
-        <>
-          <Link to='/blog' className={instance.backtrackLink}>
-            <img src='/images/arrow.png' alt='Go back link' />
-            Blog
-          </Link>
-          <div className={instance.header}>
-            <div className={instance.headerTop}>
-              <h1>{postInfo.name}</h1>
-              <h3>{postInfo.created}</h3>
+        <Link to='/blog' className={instance.backtrackLink}>
+          <img src='/images/arrow.png' alt='Go back link' />
+          Blog
+        </Link>
+        {loadingStatus === 'SUCCESS' ? (
+          <>
+            <div className={instance.header}>
+              <div className={instance.headerTop}>
+                <h1>{postInfo.name}</h1>
+                <h3>{postInfo.created}</h3>
+              </div>
+              <div className={instance.category}>{postInfo.category}</div>
             </div>
-            <div className={instance.category}>{postInfo.category}</div>
+            <div className={instance.content}>
+              {parse(postInfo.content)}
+            </div>
+          </>
+        ) : loadingStatus === 'FAILURE' ? (
+          <p>ERROR: Could not load post info for {searchParams.get('name')}</p>
+        ) : (
+          <div className='loading-container'>
+            <img src='/images/loading.svg' alt='Loading symbol' loading='lazy' />
           </div>
-          <div className={instance.content}>
-            {parse(postInfo.content)}
-          </div>
-        </>
-      ) : loadingStatus === 'FAILURE' ? (
-        <p>ERROR: Could not load post info for {searchParams.get('name')}</p>
-      ) : (
-        <div className='loading-container'>
-          <img src='/images/loading.svg' alt='Loading symbol' loading='lazy' />
-        </div>
-      )}
+        )}
       </div>
     </div>
   );
