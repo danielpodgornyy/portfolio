@@ -41,7 +41,6 @@ function BlogPage() {
                 <h1>{postInfo.name}</h1>
                 <h3>{postInfo.created}</h3>
               </div>
-              <div className={instance.category}>{postInfo.category}</div>
             </div>
             <div className={instance.content}>
               {parse(postInfo.content)}

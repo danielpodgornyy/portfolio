@@ -3,7 +3,9 @@ import { Project, SlimProject } from './projects.model.js';
 
 export async function getAllProjectInfo(): Promise<Array<SlimProject>>  {
   try {
-    const query = `SELECT name, image_path, image_alt, description FROM projects`;
+    const query = `SELECT name, image_path, image_alt, description FROM projects
+                   ORDER BY created DESC`;
+
 
     let res = await db.query(query);
 

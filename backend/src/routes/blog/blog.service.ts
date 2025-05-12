@@ -3,7 +3,8 @@ import { Post, SlimPost } from './blog.model.js';
 
 export async function getAllPostInfo(): Promise<Array<SlimPost>>  {
   try {
-    const query = `SELECT name, category, created FROM blog`;
+    const query = `SELECT name, category, created FROM blog
+                   ORDER BY created DESC`;
 
     let res = await db.query(query);
 

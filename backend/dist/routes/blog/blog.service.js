@@ -1,7 +1,8 @@
 import db from '../../db/db_conn.js';
 export async function getAllPostInfo() {
     try {
-        const query = `SELECT name, category, created FROM blog`;
+        const query = `SELECT name, category, created FROM blog
+                   ORDER BY created DESC`;
         let res = await db.query(query);
         // Convert date object to a short data for each SlimPostInfo object EX: MM/DD/YYYY
         res.rows.forEach((row) => {

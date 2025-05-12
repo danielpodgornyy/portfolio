@@ -24,7 +24,7 @@
 }
 
 .headerTop > h1 {
-    font-size: 2.1rem;
+    font-size: 2.4rem;
 }
 
 .headerTop > h3 {
@@ -81,7 +81,7 @@
     border: 1px solid #3B495B;
     width: 100%;
     padding: 20px;
-    margin-top: 30px;
+    margin-top: 15px;
     color: #D4E6FF;
 }
 
@@ -90,6 +90,16 @@
     width: 100% - 20px;
 }
 
+.content a {
+    text-decoration: none;
+    color: #D4E6FF;
+}
+
 article > h1, article > h2, article > h3 {
     color: #D4E6FF;
+    margin-bottom: 1px;
+}
+
+article > h3 {
+    font-size: 1.3rem;
 }

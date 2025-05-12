@@ -1,7 +1,8 @@
 import db from '../../db/db_conn.js';
 export async function getAllProjectInfo() {
     try {
-        const query = `SELECT name, image_path, image_alt, description FROM projects`;
+        const query = `SELECT name, image_path, image_alt, description FROM projects
+                   ORDER BY created DESC`;
         let res = await db.query(query);
         return res.rows;
     }

@@ -46,7 +46,7 @@ function ProjectPage() {
               <p>{projectInfo.description}</p>
             </div>
 
-            <img src='/images/project.png' className={instance.visual} alt='Project visual' />
+            <img src={projectInfo.image_path} className={instance.visual} alt='Project visual' />
 
             <div className={instance.instanceLinks}>
               {projectInfo.live && <a href={projectInfo.live}>Live</a>}
