@@ -1,7 +1,7 @@
 [
   {
     "name": "Portfolio",
-    "image_path": "gifs/c_code_analysis_tool.gif",
+    "image_path": "images/coming_soon.png",
     "image_alt": "GIF showing the usage of the portfolio",
     "category": "Project",
     "description": "A fully featured personal portfolio website that offers a preview page of new additions and highlights, easy and dynamic adding of new blog posts and projects, a contact page and some additional features",
@@ -14,7 +14,7 @@
   },
   {
     "name": "Project Atlas",
-    "image_path": "gifs/c_code_analysis_tool.gif",
+    "image_path": "images/coming_soon.png",
     "image_alt": "GIF showing the globe and how its used",
     "category": "Project",
     "description": "A website that displays an interactable 3D render of a globe with filters that display a plethora of live data",
@@ -40,7 +40,7 @@
   },
   {
     "name": "Netman",
-    "image_path": "gifs/c_code_analysis_tool.gif",
+    "image_path": "gifs/netman.gif",
     "image_alt": "GIF showing how to use the multi-chat application portion of netman",
     "category": "Project",
     "description": "A python application meant to show off an array networking concepts through a collection of mini-to-medium sized projects. There is currently only one project implemented: the multiroom chat application",
