@@ -46,8 +46,8 @@ VITE_API_URL = The URL of your backend where the frontend will send requests
 
 To update the database with the information you entered in the JSON files, run the following commands from the `/backend` directory:
 ```
-npm run seed
-npm run update-data
+npm run seed;
+npm run update-data;
 ```
 
 The `seed` script resets the database and rebuilds the tables using the schema in the `db` directory. Then, the `update-data` script populates the tables with your input data.
@@ -58,19 +58,20 @@ Feel free to make any adjustments, just know that you'll have to update a few fi
 
 Since the application is split into both a frontend and backend, navigate into each directory and install the necessary packages with:
 ```
-npm install
+npm install;
 ```
 
 To run the backend (from the `/backend` directory), use:
 ```
-npm run start
+npm run start;
 ```
 
 A build step runs in `prestart` to compile TypeScript to JavaScript before execution.
 
 To run the frontend (from the `/frontend` directory), use:
 ```
-npm run start
+npm run build;
+vite;
 ```
 
 ## Features
