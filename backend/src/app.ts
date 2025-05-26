@@ -16,7 +16,9 @@ const __dirname = path.dirname(__filename);
 
 var app = express();
 
-app.use(cors());
+app.use(cors({
+  origin: 'https://danielpodgornyy.com'
+}));
 
 app.use(logger('dev'));
 app.use(express.json());
